@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbPersonalWebModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Blogs">
+    <Key>
+      <PropertyRef Name="BlogID" />
+    </Key>
+    <Property Name="BlogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImageSrc" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="BlogID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Educations">
+    <Key>
+      <PropertyRef Name="EducationID" />
+    </Key>
+    <Property Name="EducationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageSrc" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Specialty" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Experiences">
+    <Key>
+      <PropertyRef Name="ExperienceID" />
+    </Key>
+    <Property Name="ExperienceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageSrc" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Specialty" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Icons">
+    <Key>
+      <PropertyRef Name="IconID" />
+    </Key>
+    <Property Name="IconID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IconName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNumber" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Portfolio">
+    <Key>
+      <PropertyRef Name="PortfolioID" />
+    </Key>
+    <Property Name="PortfolioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageSrc" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UrlSrc" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="LikeCount" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SocialMedias">
+    <Key>
+      <PropertyRef Name="MediaID" />
+    </Key>
+    <Property Name="MediaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Url" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="IconID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Comment__BlogID__4CA06362">
+    <End Role="Blogs" Type="Self.Blogs" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blogs">
+        <PropertyRef Name="BlogID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="BlogID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SocialMed__IconI__52593CB8">
+    <End Role="Icons" Type="Self.Icons" Multiplicity="1" />
+    <End Role="SocialMedias" Type="Self.SocialMedias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Icons">
+        <PropertyRef Name="IconID" />
+      </Principal>
+      <Dependent Role="SocialMedias">
+        <PropertyRef Name="IconID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbPersonalWebModelStoreContainer">
+    <EntitySet Name="Blogs" EntityType="Self.Blogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Educations" EntityType="Self.Educations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Experiences" EntityType="Self.Experiences" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Icons" EntityType="Self.Icons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SocialMedias" EntityType="Self.SocialMedias" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Comment__BlogID__4CA06362" Association="Self.FK__Comment__BlogID__4CA06362">
+      <End Role="Blogs" EntitySet="Blogs" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SocialMed__IconI__52593CB8" Association="Self.FK__SocialMed__IconI__52593CB8">
+      <End Role="Icons" EntitySet="Icons" />
+      <End Role="SocialMedias" EntitySet="SocialMedias" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

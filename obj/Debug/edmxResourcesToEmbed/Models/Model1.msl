@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbPersonalWebModelStoreContainer" CdmEntityContainer="DbPersonalWebEntities">
+    <EntitySetMapping Name="Blogs">
+      <EntityTypeMapping TypeName="DbPersonalWebModel.Blog">
+        <MappingFragment StoreEntitySet="Blogs">
+          <ScalarProperty Name="BlogID" ColumnName="BlogID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ImageSrc" ColumnName="ImageSrc" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="DbPersonalWebModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="BlogID" ColumnName="BlogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Educations">
+      <EntityTypeMapping TypeName="DbPersonalWebModel.Education">
+        <MappingFragment StoreEntitySet="Educations">
+          <ScalarProperty Name="EducationID" ColumnName="EducationID" />
+          <ScalarProperty Name="ImageSrc" ColumnName="ImageSrc" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experiences">
+      <EntityTypeMapping TypeName="DbPersonalWebModel.Experience">
+        <MappingFragment StoreEntitySet="Experiences">
+          <ScalarProperty Name="ExperienceID" ColumnName="ExperienceID" />
+          <ScalarProperty Name="ImageSrc" ColumnName="ImageSrc" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Icons">
+      <EntityTypeMapping TypeName="DbPersonalWebModel.Icon">
+        <MappingFragment StoreEntitySet="Icons">
+          <ScalarProperty Name="IconID" ColumnName="IconID" />
+          <ScalarProperty Name="IconName" ColumnName="IconName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="DbPersonalWebModel.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Portfolios">
+      <EntityTypeMapping TypeName="DbPersonalWebModel.Portfolio">
+        <MappingFragment StoreEntitySet="Portfolio">
+          <ScalarProperty Name="PortfolioID" ColumnName="PortfolioID" />
+          <ScalarProperty Name="ImageSrc" ColumnName="ImageSrc" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UrlSrc" ColumnName="UrlSrc" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LikeCount" ColumnName="LikeCount" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SocialMedias">
+      <EntityTypeMapping TypeName="DbPersonalWebModel.SocialMedia">
+        <MappingFragment StoreEntitySet="SocialMedias">
+          <ScalarProperty Name="MediaID" ColumnName="MediaID" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IconID" ColumnName="IconID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
