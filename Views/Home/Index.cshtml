@@ -1,0 +1,42 @@
+﻿@model PersonalWeb.Models.SettingWeb
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("HeaderPartial")
+
+@Html.Partial("PopupMobilePartial")
+
+<main class="main-page-wrapper">
+
+    @Html.Partial("SliderPartial")
+
+    @Html.Partial("ExperiencePartial")
+
+    @Html.Partial("EducationPartial")
+
+    @Html.Partial("ResumePartial")
+
+    @Html.Partial("PortfolioPartial")
+
+    @Html.Partial("BlogPartial")
+
+    @Html.Partial("ContactPartial")
+
+    @Html.Partial("PortfolioBodyPartial")
+
+    @Html.Partial("BlogBodyPartial")
+
+
+    <!-- Back to  top Start -->
+    <div class="backto-top">
+        <div>
+            <i data-feather="arrow-up"></i>
+        </div>
+    </div>
+    <!-- Back to top end -->
+
+</main>
+
+@Html.Partial("FooterPartial")
