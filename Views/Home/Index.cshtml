@@ -12,9 +12,9 @@
 
     @Html.Partial("SliderPartial")
 
-    @Html.Partial("ExperiencePartial")
+    @Html.Action("ExperiencePartial")
 
-    @Html.Partial("EducationPartial")
+    @Html.Action("EducationPartial")
 
     @Html.Partial("ResumePartial")
 
@@ -22,8 +22,110 @@
 
     @Html.Action("BlogPartial")
 
-    @Html.Partial("ContactPartial")
+    <!-- Start Contact section -->
+    <div class="rn-contact-area rn-section-gap section-separator" id="contacts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <span class="subtitle">Contact</span>
+                        <h2 class="title">Contact With Me</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt--50 mt_md--40 mt_sm--40 mt-contact-sm">
+                <div class="col-lg-5">
+                    <div class="contact-about-area">
+                        <div class="thumbnail">
+                            <img src="~/assets/images/contact/contact1.png" alt="contact-img">
+                        </div>
+                        <div class="title-area">
+                            <h4 class="title">Nevine Acotanza</h4>
+                            <span>Chief Operating Officer</span>
+                        </div>
+                        <div class="description">
+                            <p>
+                                I am available for freelance work. Connect with me via and call in to my account.
+                            </p>
+                            <span class="phone">
+                                Phone: <a id="PhoneNumber" href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a>
+                            </span>
+                            <span class="mail">
+                                Email: <a href="mailto:@Model.Email">@Model.Email</a>
+                            </span>
+                        </div>
+                        <div class="social-area">
+                            <div class="name">FIND WITH ME</div>
+                            <div class="social-icone">
+                                <a href="#"><i data-feather="facebook"></i></a>
+                                <a href="#"><i data-feather="linkedin"></i></a>
+                                <a href="#"><i data-feather="instagram"></i></a>
+                                <a href="#"><i data-feather="youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos-delay="600" class="col-lg-7 contact-input">
+                    <div class="contact-form-wrapper">
+                        <div class="introduce">
 
+                            <form action="/" class="rnt-contact-form row" id="contact-form" method="post">
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="contact-name">Your Name</label>
+                                        <input class="form-control form-control-lg" name="Name" id="contact-name" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="contact-phone">Phone Number</label>
+                                        <input class="form-control" name="PhoneNumber" id="contact-phone" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="contact-email">Email</label>
+                                        <input class="form-control form-control-sm" id="contact-email"
+                                               name="Email" type="email">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="subject">subject</label>
+                                        <input class="form-control form-control-sm" id="subject" name="Subject"
+                                               type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label for="contact-message">Your Message</label>
+                                        <textarea name="Description" id="contact-message" cols="30"
+                                                  rows="10"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 form-group" style="color:red;">
+                                    @if (ViewBag.Error != String.Empty)
+                                    {
+
+                                        @ViewBag.Error
+                                    }
+                                </div>
+                                <div class="col-lg-12">
+                                    <input type="submit" name="submit" value="SEND MESSAGE" class="rn-btn" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Contuct section -->
     <!-- Back to  top Start -->
     <div class="backto-top">
         <div>
@@ -33,5 +135,3 @@
     <!-- Back to top end -->
 
 </main>
-
-@Html.Partial("FooterPartial")

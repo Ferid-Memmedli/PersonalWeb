@@ -378,8 +378,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\HeaderPartial.cshtml" />
     <Content Include="Views\Home\PopupMobilePartial.cshtml" />
-    <Content Include="Views\Home\FooterPartial.cshtml" />
-    <Content Include="Views\Home\ContactPartial.cshtml" />
     <Content Include="Views\Home\PortfolioPartial.cshtml" />
     <Content Include="Views\Home\ResumePartial.cshtml" />
     <Content Include="Views\Home\ExperiencePartial.cshtml" />

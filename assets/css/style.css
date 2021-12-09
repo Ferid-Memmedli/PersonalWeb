@@ -10672,6 +10672,7 @@ div#featured-project-carousel {
       padding: 20px; } }
   .experience-style-two .experience-image {
     max-width: 250px;
+    max-height: 200px;
     height: auto;
     border-radius: 8px;
     transition: var(--transition);

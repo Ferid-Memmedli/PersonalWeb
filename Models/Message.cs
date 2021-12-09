@@ -9,17 +9,24 @@
 
 namespace PersonalWeb.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Message
-    {
-        public int MessageID { get; set; }
-        public string Name { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
-        public string Subject { get; set; }
-        public string Description { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-    }
+  using System;
+  using System.Collections.Generic;
+  using System.ComponentModel.DataAnnotations;
+
+  public partial class Message
+  {
+    public int MessageID { get; set; }
+
+    [Required]
+    public string Name { get; set; }
+    [Required]
+    public string PhoneNumber { get; set; }
+    [Required]
+    public string Email { get; set; }
+    [Required]
+    public string Subject { get; set; }
+    [Required]
+    public string Description { get; set; }
+    public Nullable<System.DateTime> CreatedDate { get; set; }
+  }
 }
