@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title id="WebTitle">@Model.WebTitle</title>
+    <title id="WebTitle"></title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,6 +24,7 @@
 <body class="template-color-1 spybody white-version" data-spy="scroll" data-target=".navbar-example2" data-offset="150">
 
     @RenderBody()
+
     <!-- JS ============================================ -->
     <script src="~/assets/js/vendor/jquery.js"></script>
     <script src="~/assets/js/vendor/modernizer.min.js"></script>
@@ -37,6 +38,27 @@
     <!-- main JS -->
     <script src="~/assets/js/main.js"></script>
 
+    <script>
+        $(document).ready(function () {
+
+            $.getJSON("/Home/JsonData", null, function (data) {
+                $("#WebTitle").append(data.WebTitle);
+                $("#LogoSrc").attr('src', data.LogoSrc);
+                $("#PhoneNumber").attr('href', 'tel:' + data.PhoneNumber);
+                $("#PhoneNumber").append(data.PhoneNumber);
+                $("#Email").attr('href', 'mailto:' + data.Email);
+                $("#DownloadCv").attr('download', data.DownloadCv);
+                $("#Email").append(data.Email);
+                $("#FullName").append(data.FullName);
+                $("#ShortDescription").append(data.ShortDescription);
+                $("#Job").append(data.Job);
+                $("#Email1").append(data.Email);
+                $("#Location").append(data.Location);
+                $("#ImageSrc").attr('src', data.ImageSrc);
+            });
+
+        });
+    </script>
 </body>
 
 </html>

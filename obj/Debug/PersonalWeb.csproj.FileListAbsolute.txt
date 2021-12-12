@@ -159,4 +159,7 @@ C:\Users\shaha\Desktop\PersonalWeb\bin\EntityFramework.dll
 C:\Users\shaha\Desktop\PersonalWeb\bin\EntityFramework.SqlServer.dll
 C:\Users\shaha\Desktop\PersonalWeb\bin\EntityFramework.xml
 C:\Users\shaha\Desktop\PersonalWeb\bin\EntityFramework.SqlServer.xml
-C:\Users\shaha\Desktop\PersonalWeb\obj\Debug\PersonalWeb.csproj.AssemblyReference.cache
+C:\Users\shaha\Desktop\Pragmatech\PersonalWeb\bin\EntityFramework.dll
+C:\Users\shaha\Desktop\Pragmatech\PersonalWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\shaha\Desktop\Pragmatech\PersonalWeb\bin\EntityFramework.xml
+C:\Users\shaha\Desktop\Pragmatech\PersonalWeb\bin\EntityFramework.SqlServer.xml

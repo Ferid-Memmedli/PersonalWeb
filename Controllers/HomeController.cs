@@ -15,7 +15,6 @@ namespace PersonalWeb.Controllers
   public class HomeController : Controller
   {
     DbPersonalWebEntities context;
-    SettingWeb settingWeb = JsonFileManager.JsonConvertToObject<SettingWeb>("App_Data\\SettingWeb.json");
     public HomeController()
     {
       context = new DbPersonalWebEntities();
@@ -24,49 +23,54 @@ namespace PersonalWeb.Controllers
     [HttpGet]
     public ActionResult Index()
     {
-      return View(settingWeb);
+      return View();
     }
-
 
     [HttpPost]
     public ActionResult Index(Message message)
     {
-
       if (ModelState.IsValid)
       {
+        message.CreatedDate = DateTime.Now;
         context.Messages.Add(message);
         context.SaveChanges();
         return RedirectToAction("Index");
       }
-
-      foreach (var item in ModelState.Values)
-      {
-        if (item.Errors.Count == 1)
-          ViewBag.Error = item.Errors[0].ErrorMessage;
-      }
-      return View(settingWeb);
+      ViewBag.Error = ModelState.Values.FirstOrDefault(p => p.Errors.Count >= 0).Errors[0].ErrorMessage;
+      return View();
     }
 
+    [ChildActionOnly]
     public PartialViewResult ExperiencePartial()
     {
       return PartialView(context.Experiences.ToList());
     }
 
+    [ChildActionOnly]
     public PartialViewResult EducationPartial()
     {
       return PartialView(context.Educations.ToList());
     }
 
+    [ChildActionOnly]
     public PartialViewResult BlogPartial()
     {
       return PartialView(context.Blogs.ToList());
     }
 
+    [ChildActionOnly]
     public PartialViewResult PortfolioPartial()
     {
       return PartialView(context.Portfolios.ToList());
     }
 
+    [HttpGet]
+    public JsonResult JsonData()
+    {
+      SettingWeb settingWeb = JsonFileManager.JsonConvertToObject<SettingWeb>("App_Data\\SettingWeb.json");
+
+      return Json(settingWeb, JsonRequestBehavior.AllowGet);
+    }
 
   }
 }

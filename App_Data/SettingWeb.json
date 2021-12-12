@@ -1,10 +1,10 @@
 ﻿{
-  "WebTitle": "Backend Developer || Ferid Memmedli",
+  "WebTitle": ".Net Developer || Ferid Memmedli",
   "LogoSrc": "../assets/images/logo/logo-dark.png",
   "FullName": "Ferid Memmedli",
   "ShortDescription": "\"Ağdam Dövlət Sosial İqtisad Kollecdə\",Yol Hərəkətin Təşkili üzrə təhsil almışam. IT sahəsi üzrə ilk təhsilimi \"Network Training Center\" təlim mərkəzində Helpdesk üzrə olub.Daha sonra \"Pragmatech Təhsil və İnkişaf Mərkəzində\" təhsil alaraq proqramlaşdırma həyatına ilk atdımlarımı atdım. Qısa müddətdə HTML, CSS, JavaScript, Sass(Scss), Bootstrap, Python(Flask), C#, SQLite, MSSQL və Git & GitHub biliklərinə sahib oldum. Hazırda C# ixtisası üzrə təhsilimi davam etdirirəm.",
   "DownloadCv": "../assets/pdf/FeridIsResume.pdf",
-  "Job": "Backend Developer",
+  "Job": ".Net Developer",
   "ImageSrc": "../assets/images/slider/banner-02.png",
   "Location": "Baku",
   "PhoneNumber": "055 239 33 47",

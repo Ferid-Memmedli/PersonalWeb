@@ -1,12 +1,9 @@
-﻿@model PersonalWeb.Models.SettingWeb
-
+﻿
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @Html.Partial("HeaderPartial")
-
-@Html.Partial("PopupMobilePartial")
 
 <main class="main-page-wrapper">
 
@@ -48,10 +45,10 @@
                                 I am available for freelance work. Connect with me via and call in to my account.
                             </p>
                             <span class="phone">
-                                Phone: <a id="PhoneNumber" href="tel:@Model.PhoneNumber">@Model.PhoneNumber</a>
+                                Phone: <a id="PhoneNumber" href=""></a>
                             </span>
                             <span class="mail">
-                                Email: <a href="mailto:@Model.Email">@Model.Email</a>
+                                Email: <a id="Email" href=""></a>
                             </span>
                         </div>
                         <div class="social-area">
